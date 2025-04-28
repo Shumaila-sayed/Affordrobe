@@ -1,6 +1,44 @@
+import { useState, useEffect } from "react";
+
 const Products = () => {
+    const [productList, setProductList] = useState([]);
+
+    const fetchProducts = async () => {
+
+        try {
+            const response = await fetch('https://fakestoreapi.com/products');
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch characters');
+            }
+
+            const data = await response.json();
+            if (data.Response === 'False') {
+                return;
+            }
+
+            if (data) {
+                let productsArr = data.map((product) => ({
+                    ...product,
+                    inCart: false,
+                }));
+                setProductList(productsArr);
+            }
+    
+        } catch (error) {
+            console.error(`Error fetching characters: ${error}`)
+        } 
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    console.log(productList)
+
+
     return (
-        <h1>This is products page</h1>
+        <h1>Find Your Style</h1>
     )
 }
 
