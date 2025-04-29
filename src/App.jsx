@@ -1,23 +1,31 @@
-import { Link } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import { Route, Routes } from "react-router-dom";
+
 
 const App = () => {
 	return (
-		<div>
-			<h1>Hello this is the main page of the app</h1>
-			<nav>
-				<ul>
-					<li>
-						<Link to='/'>Home</Link>
-					</li>
-					<li>
-						<Link to='products'>Shop</Link>
-					</li>
-					<li>
-						<Link to='cart'>Cart</Link>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<>
+			<Navbar />
+			<div>
+				<Routes>
+					<Route
+						path='/'
+						element={<Home />}
+					/>
+					<Route
+						path='/products'
+						element={<Products />}
+					/>
+					<Route
+						path='/cart'
+						element={<Cart />}
+					/>
+				</Routes>
+			</div>
+		</>
 	);
 };
 

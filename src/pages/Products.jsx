@@ -34,11 +34,13 @@ const Products = () => {
         fetchProducts();
     }, []);
 
-    console.log(productList)
-
 
     return (
-        <h1>Find Your Style</h1>
+        <>
+            <h1>Find Your Style</h1>
+          {/* //  <Products productList={productList} /> */}
+        </>
+        
     )
 }
 
