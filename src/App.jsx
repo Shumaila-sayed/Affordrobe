@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -6,9 +7,11 @@ import { Route, Routes } from "react-router-dom";
 
 
 const App = () => {
+	const [cartList, setCartList] = useState([]);
+
 	return (
 		<>
-			<Navbar />
+			<Navbar cartList={cartList} />
 			<div>
 				<Routes>
 					<Route
@@ -17,11 +20,21 @@ const App = () => {
 					/>
 					<Route
 						path='/products'
-						element={<Products />}
+						element={
+							<Products
+								cartList={cartList}
+								setCartList={setCartList}
+							/>
+						}
 					/>
 					<Route
 						path='/cart'
-						element={<Cart />}
+						element={
+							<Cart
+								cartList={cartList}
+								setCartList={setCartList}
+							/>
+						}
 					/>
 				</Routes>
 			</div>
