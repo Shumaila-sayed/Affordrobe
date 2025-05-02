@@ -1,6 +1,14 @@
-const ProductCard = () => {
+const ProductCard = ({product}) => {
     return (
-        <h1>Hey</h1>
+        <div>
+            <img src="" alt="" />
+            <h3>    
+
+            </h3>
+            <p> </p>
+            
+
+        </div>
     )
 }
 
