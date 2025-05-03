@@ -22,7 +22,6 @@ const App = () => {
 						path='/products'
 						element={
 							<Products
-								cartList={cartList}
 								setCartList={setCartList}
 							/>
 						}

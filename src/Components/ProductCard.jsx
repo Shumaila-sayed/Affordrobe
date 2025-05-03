@@ -1,4 +1,4 @@
-const ProductCard = ({product}) => {
+const ProductCard = () => {
     return (
         <div>
             <img src="" alt="" />
@@ -6,7 +6,7 @@ const ProductCard = ({product}) => {
 
             </h3>
             <p> </p>
-            
+
 
         </div>
     )
