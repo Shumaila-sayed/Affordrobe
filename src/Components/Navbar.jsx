@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({cartList}) => {
     return (
 			<header>
 				<NavLink
@@ -46,7 +46,10 @@ const Navbar = () => {
 									: 'text-gray-600 hover:text-blue-500'
 							}
 						>
-							Cart
+						{`Cart ${cartList.reduce((acc, product) => {
+							const qty = Number(product.quantity);
+							return acc + qty;
+						}, 0)}`}
 						</NavLink>
 					</li>
 				</ul>
