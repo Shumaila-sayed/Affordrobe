@@ -1,26 +1,24 @@
 import { useState } from 'react';
+import useCartQuantity from '../hooks/useCartQuantity';
 
 const ProductCard = ({ product, cartList, setCartList }) => {
-	const [quantity, setQuantity] = useState(0);
 	const [inCart, setInCart] = useState(false);
+	const {
+		quantity,
+		setQuantity,
+		updateQuantity,
+		incrementQuantity,
+		decrementQuantity,
+	} = useCartQuantity(product, cartList, setCartList);
 
-	const incrementQuantity = (e) => {
-		e.preventDefault();
-		setQuantity(quantity + 1);
-	};
-
-	const decrementQuantity = (e) => {
-		e.preventDefault();
-		if (quantity > 0) {
-			setQuantity(quantity - 1);
-		}
-	};
-
+	   
+    // TODO: A pop-up which says "Successfully Added to cart!!"
+    
 	const handleAddToCart = () => {
 		const alreadyInCart = cartList.some((item) => item.id === product.id);
 		if (!alreadyInCart && quantity !== 0) {
             setCartList([...cartList, { ...product, quantity: quantity  }]);
-            setInCart(true)
+			setInCart(true);
 		}
     };
     
@@ -44,7 +42,12 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 				<input
 					type='number'
 					value={quantity}
-					onChange={(e) => setQuantity(e.target.valueAsNumber)}
+					onChange={(e) => {
+						const newQuantity = e.target.valueAsNumber;
+						if (newQuantity >= 1) {
+							updateQuantity(newQuantity);
+						}
+					}}
 				/>
 				<button onClick={incrementQuantity}>+</button>
 			</div>
