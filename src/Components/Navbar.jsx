@@ -58,24 +58,3 @@ const Navbar = ({cartList}) => {
 } 
 
 export default Navbar;
-
-/* 
-something about how to share product information between shop and cart
-
- Passing data
-import { Link } from 'react-router-dom';
-
-<Link to={{ pathname: "/newPage", state: { myValue: "example" } }}>
-  Go to New Page
-</Link>
-
-
-// Receiving data
-import { useLocation } from 'react-router-dom';
-
-const NewPage = () => {
-  const location = useLocation();
-  const value = location.state.myValue;
-
-  return <div>{value}</div>;
-};  */
