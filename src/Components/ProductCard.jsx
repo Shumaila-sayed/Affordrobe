@@ -10,15 +10,18 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 		incrementQuantity,
 		decrementQuantity,
 	} = useCartQuantity(product, cartList, setCartList);
-
-	   
-    // TODO: A pop-up which says "Successfully Added to cart!!"
+	
+	const [isVisible, setIsVisible] = useState(false);
     
 	const handleAddToCart = () => {
 		const alreadyInCart = cartList.some((item) => item.id === product.id);
 		if (!alreadyInCart && quantity !== 0) {
             setCartList([...cartList, { ...product, quantity: quantity  }]);
 			setInCart(true);
+			setIsVisible(true);
+			setTimeout(() => {
+				setIsVisible(false);
+			}, 3000);
 		}
     };
     
@@ -56,6 +59,7 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 			) : (
 				<button onClick={handleAddToCart}>Add to cart</button>
 			)}
+			{isVisible && <p>This message is displayed for 3 seconds.</p>}
 		</div>
 	);
 };
