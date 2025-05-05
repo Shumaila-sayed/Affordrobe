@@ -20,6 +20,15 @@ const Cart = ({ cartList, setCartList }) => {
 };
 
 const Order = ({ cartList, setCartList }) => {
+
+	const subTotal = cartList.reduce((acc, product) => {
+		const qty = Number(product.quantity);
+		const price = Number(product.price);
+		return Math.round(acc + qty * price) ;
+	}, 0);
+
+	const vat = (subTotal * 25) / 100;	
+
 	return (
 		<>
 			<h1>Review Your Order</h1>
@@ -33,7 +42,14 @@ const Order = ({ cartList, setCartList }) => {
 					/>
 				))}
 			</div>
-			<h2>Order Summary</h2>
+			<div>
+				<h2>Order Summary</h2>
+				<div><p>SubTotal</p><p>{subTotal}</p></div>
+				<div><p>VAT(25%)</p><p>{vat}</p></div>
+				<div><p>Total</p><p>{subTotal + vat}</p></div>
+				<button>Checkout</button>
+			</div>
+			
 		</>
 	);
 };
