@@ -16,18 +16,34 @@ const CartItem = ({ product, cartList, setCartList }) => {
 	};
 
 	return (
-		<div>
-			<img
-				src={product.image}
-				alt={product.title}
-			/>
-			<div>
-				<h2>{product.title}</h2>
-				<div>
-					<button onClick={handleDeleteItem}>Delete</button>
+		<div className='flex justify-between font-cal [&:not(:last-child)]:border-b-2 [&:not(:last-child)]:border-grey'>
+			<div className='flex lg:p-8 p-4 px-4'>
+				<div className='w-[100px]'>
+					<img
+						className='h-[100px] w-[full] object-contain'
+						src={product.image}
+						alt={product.title}
+					/>
+				</div>
+
+				<div className='text-left pt-3 pl-3'>
+					<h2 className='text-[1.2em]'>{product.title}</h2>
+
 					<div>
-						<button onClick={decrementQuantity}>-</button>
+						<button
+							className='cursor-pointer text-coral-red opacity-75'
+							onClick={handleDeleteItem}
+						>
+							Delete
+						</button>
+						<button
+							className='hover:text-peach cursor-pointer mx-2'
+							onClick={decrementQuantity}
+						>
+							-
+						</button>
 						<input
+							className='w-22 text-center no-arrow hover:text-peach border-2 rounded-2xl border-peach '
 							type='number'
 							value={quantity}
 							onChange={(e) => {
@@ -37,11 +53,16 @@ const CartItem = ({ product, cartList, setCartList }) => {
 								}
 							}}
 						/>
-						<button onClick={incrementQuantity}>+</button>
+						<button
+							className='hover:text-peach cursor-pointer mx-2'
+							onClick={incrementQuantity}
+						>
+							+
+						</button>
 					</div>
 				</div>
 			</div>
-			<p>{`$ ${product.price}`}</p>
+			<p className='pr-6 pt-8 lg:pt-12 text-coral-red'>{`$ ${product.price}`}</p>
 		</div>
 	);
 };
