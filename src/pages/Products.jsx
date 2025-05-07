@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProductCard from '../Components/ProductCard';
+import Spinner from '../Components/Spinner';
 
 const Products = ({ cartList, setCartList }) => {
 	const [productList, setProductList] = useState([]);
@@ -41,17 +42,22 @@ const Products = ({ cartList, setCartList }) => {
 	}, []);
 
 	return (
-		<>
-			<h1>Find Your Style</h1>
+		<div className='bg-grey min-h-screen'>
+			<h1 className='text-center text-coral-red text-2xl pt-8 font-bold font-cal tracking-wider '>
+				Discover Your Style
+			</h1>
 
 			{isLoading ? (
-				<h1>Loading...</h1>
+				<Spinner />
 			) : errorMessage ? (
 				<p className='text-red-800 text-center mt-15 text-2xl'>
 					{errorMessage}
 				</p>
 			) : (
-				<div>
+				<div
+					className=' grid grid-cols-[repeat(auto-fit,minmax(12em,0.6fr))] gap-y-8 gap-x-5 py-8 place-items-center 
+                 lg:grid-cols-[repeat(auto-fit,minmax(22em,1fr))] lg:mx-16'
+				>
 					{productList.map((product) => (
 						<ProductCard
 							product={product}
@@ -62,7 +68,7 @@ const Products = ({ cartList, setCartList }) => {
 					))}
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 
