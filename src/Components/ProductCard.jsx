@@ -10,39 +10,46 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 		incrementQuantity,
 		decrementQuantity,
 	} = useCartQuantity(product, cartList, setCartList);
-	
+
 	const [isVisible, setIsVisible] = useState(false);
-    
+
 	const handleAddToCart = () => {
 		const alreadyInCart = cartList.some((item) => item.id === product.id);
 		if (!alreadyInCart && quantity !== 0) {
-            setCartList([...cartList, { ...product, quantity: quantity  }]);
+			setCartList([...cartList, { ...product, quantity: quantity }]);
 			setInCart(true);
 			setIsVisible(true);
 			setTimeout(() => {
 				setIsVisible(false);
 			}, 3000);
 		}
-    };
-    
-    const handleRemoveFromCart = () => {
-        const newCart = cartList.filter((item) => item.id !== product.id);
-        setCartList(newCart);
-        setQuantity(0)
-        setInCart(false);
-    }
+	};
+
+	const handleRemoveFromCart = () => {
+		const newCart = cartList.filter((item) => item.id !== product.id);
+		setCartList(newCart);
+		setQuantity(0);
+		setInCart(false);
+	};
 
 	return (
-		<div>
+		<div className='bg-white inset-0 flex flex-col items-center justify-center rounded-xl shadow-md cursor-pointer  h-[400px] w-[250px] overflow-hidden hover:shadow-[0_0_20px_rgba(241,218,82,0.7)]'>
 			<img
+				className='h-48 w-full object-contain rounded-t-xl p-1'
 				src={product.image}
 				alt={product.title}
 			/>
-			<h3>{product.title}</h3>
-			<p>{`$ ${product.price}`}</p>
-			<div>
-				<button onClick={decrementQuantity}>-</button>
+			<h3 className='px-4 pt-2 font-cal font-light'>{product.title}</h3>
+			<p className='place-self-start px-4 text-coral-red font-bold'>{`$ ${product.price}`}</p>
+			<div className='flex gap-4 font-cal h'>
+				<button
+					className='hover:text-peach'
+					onClick={decrementQuantity}
+				>
+					-
+				</button>
 				<input
+					className='w-18 text-center no-arrow hover:text-peach'
 					type='number'
 					value={quantity}
 					onChange={(e) => {
@@ -52,12 +59,27 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 						}
 					}}
 				/>
-				<button onClick={incrementQuantity}>+</button>
+				<button
+					className='hover:text-peach '
+					onClick={incrementQuantity}
+				>
+					+
+				</button>
 			</div>
 			{inCart ? (
-				<button onClick={handleRemoveFromCart}>Remove from Cart</button>
+				<button
+					className='bg-peach'
+					onClick={handleRemoveFromCart}
+				>
+					Remove from Cart
+				</button>
 			) : (
-				<button onClick={handleAddToCart}>Add to cart</button>
+				<button
+					className='bg-peach p-2 w-38 rounded-full mt-1.5'
+					onClick={handleAddToCart}
+				>
+					Add to cart
+				</button>
 			)}
 			{isVisible && <p>This message is displayed for 3 seconds.</p>}
 		</div>
