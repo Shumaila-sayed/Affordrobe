@@ -14,7 +14,7 @@ const Home = () => {
 				</p>
 
 				<NavLink to='/products'>
-					<button className='bg-peach rounded-full mt-8 px-18 py-2 text-amber-50 text-[1.2em] cursor-pointer hover:bg-coral-red lg:mt-12'>
+					<button className='bg-peach rounded-full mt-8 px-18 py-2 text-amber-50 text-[1.2em] cursor-pointer  border-b-6  border-coral-red hover:bg-coral-red hover:border-peach lg:mt-12 '>
 						Shop Now
 					</button>
 				</NavLink>
