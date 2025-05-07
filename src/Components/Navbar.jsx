@@ -2,7 +2,7 @@ import { NavLink } from 'react-router';
 
 const Navbar = ({ cartList }) => {
 	return (
-		<header className='flex justify-between mt-3 px-3 py-1.5 border-b-peach/60 border-b-3 shadow bg-amber-50/50 lg:px-6'>
+		<header className='flex justify-between mt-3 px-3 pb-1.5 border-b-peach/60 border-b-3 shadow bg-amber-50/50 lg:px-6 font-cal'>
 			<NavLink
 				to='/'
 				className='font-cal text-peach text-2xl'
