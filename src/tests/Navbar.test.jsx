@@ -11,10 +11,10 @@ describe('Navbar Component', () => {
 			</MemoryRouter>
 		);
 
-		expect(screen.getByText('Logo')).toBeInTheDocument();
+		expect(screen.getByText(/Affordrobe/i)).toBeInTheDocument();
 		expect(screen.getByText('Home')).toBeInTheDocument();
 		expect(screen.getByText('Shop')).toBeInTheDocument();
-		expect(screen.getByText('Cart 0')).toBeInTheDocument();
+		expect(screen.getByText('0')).toBeInTheDocument();
 	});
 
 	it('calculates and displays correct cart quantity', () => {
@@ -29,7 +29,7 @@ describe('Navbar Component', () => {
 			</MemoryRouter>
 		);
 
-		expect(screen.getByText('Cart 5')).toBeInTheDocument();
+		expect(screen.getByText('5')).toBeInTheDocument();
 	});
 
 	it('applies active class to current route link', () => {
@@ -38,8 +38,8 @@ describe('Navbar Component', () => {
 				<Navbar cartList={[]} />
 			</MemoryRouter>
 		);
-
+		
 		const shopLink = screen.getByText('Shop');
-		expect(shopLink).toHaveClass('text-blue-600');
+		expect(shopLink).toHaveClass('text-peach');
 	});
 });
