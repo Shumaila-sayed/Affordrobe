@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-cal: "Cal Sans", sans-serif;
+}
+
+@theme {
+    --color-peach: #FFAA64;
+    --color-coral-red: #FF8264;
+    --color-grey: #d7d9d4;
+}
+
+@theme {
+	--background-image-hero1: url('/hero-img1.jpg');
+}
