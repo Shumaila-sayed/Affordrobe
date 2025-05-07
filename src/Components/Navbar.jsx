@@ -10,7 +10,7 @@ const Navbar = ({ cartList }) => {
 				AFFORDROBE
 			</NavLink>
 			<nav>
-				<ul className='flex gap-6'>
+				<ul className='flex gap-12 mr-28'>
 					<li>
 						<NavLink
 							to='/'
