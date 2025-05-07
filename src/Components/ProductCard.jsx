@@ -28,7 +28,7 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 	const handleRemoveFromCart = () => {
 		const newCart = cartList.filter((item) => item.id !== product.id);
 		setCartList(newCart);
-		setQuantity(0);
+		setQuantity(1);
 		setInCart(false);
 	};
 
@@ -41,7 +41,7 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 			/>
 			<h3 className='px-4 pt-2 font-cal font-light'>{product.title}</h3>
 			<p className='place-self-start px-4 text-coral-red font-bold'>{`$ ${product.price}`}</p>
-			<div className='flex gap-4 font-cal h'>
+			<div className='flex gap-4 font-cal'>
 				<button
 					className='hover:text-peach'
 					onClick={decrementQuantity}
@@ -68,20 +68,24 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 			</div>
 			{inCart ? (
 				<button
-					className='bg-peach'
+					className='bg-peach p-2 w-44 rounded-full mt-1.5 text-white font-cal tracking-wider hover:bg-coral-red'
 					onClick={handleRemoveFromCart}
 				>
 					Remove from Cart
 				</button>
 			) : (
 				<button
-					className='bg-peach p-2 w-38 rounded-full mt-1.5'
+					className='bg-peach  border-b-6  border-coral-red hover:bg-coral-red hover:border-peach  p-2 w-44 cursor-pointer rounded-full mt-1.5 text-white font-cal tracking-wider '
 					onClick={handleAddToCart}
 				>
 					Add to cart
 				</button>
 			)}
-			{isVisible && <p>This message is displayed for 3 seconds.</p>}
+			{isVisible && (
+				<p className='fixed font-cal rounded-2xl text-[1em] w-55 px-4 py-3 text-center bg-amber-100 text-coral-red border-b-4 border-coral-red right-4 bottom-4 z-50 shadow-md'>
+					Added to the Cart!!
+				</p>
+			)}
 		</div>
 	);
 };
