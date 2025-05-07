@@ -62,8 +62,6 @@ describe('ProductCard Component', () => {
 		);
 
 		await userEvent.click(screen.getByText(/add to cart/i));
-		expect(
-			screen.getByText(/this message is displayed for 3 seconds/i)
-		).toBeInTheDocument();
+		expect(screen.getByText(/Added to the Cart!!/i)).toBeInTheDocument();
 	});
 });
