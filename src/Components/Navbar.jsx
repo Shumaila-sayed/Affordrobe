@@ -1,60 +1,71 @@
-import { NavLink } from "react-router";
+import { NavLink } from 'react-router';
 
-const Navbar = ({cartList}) => {
-    return (
-			<header>
-				<NavLink
-					to='/'
-				>
-					Logo
-				</NavLink>
-				<nav>
-					<ul>
-						<li>
-							<NavLink
-								to='/'
-								className={({ isActive }) =>
-									isActive
-										? 'text-blue-600 font-semibold border-b-2 border-blue-600'
-										: 'text-gray-600 hover:text-blue-500'
-								}
-							>
-								Home
-							</NavLink>
-						</li>
-						<li>
-							<NavLink
-								to='/products'
-								className={({ isActive }) =>
-									isActive
-										? 'text-blue-600 font-semibold border-b-2 border-blue-600'
-										: 'text-gray-600 hover:text-blue-500'
-								}
-							>
-								Shop
-							</NavLink>
-						</li>
-					</ul>
-				</nav>
-				<ul>
+const Navbar = ({ cartList }) => {
+	return (
+		<header className='flex justify-between mt-3 px-3 py-1.5 border-b-peach/60 border-b-3 shadow bg-amber-50/50 lg:px-6'>
+			<NavLink
+				to='/'
+				className='font-cal text-peach text-2xl'
+			>
+				AFFORDROBE
+			</NavLink>
+			<nav>
+				<ul className='flex gap-6'>
 					<li>
 						<NavLink
-							to='/cart'
+							to='/'
 							className={({ isActive }) =>
 								isActive
-									? 'text-blue-600 font-semibold border-b-2 border-blue-600'
-									: 'text-gray-600 hover:text-blue-500'
+									? 'text-peach font-semibold border-b-2 border-peach'
+									: 'text-gray-600 hover:text-peach'
 							}
 						>
-						{`Cart ${cartList.reduce((acc, product) => {
-							const qty = Number(product.quantity);
-							return acc + qty;
-						}, 0)}`}
+							Home
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/products'
+							className={({ isActive }) =>
+								isActive
+									? 'text-peach font-semibold border-b-2 border-peach'
+									: 'text-gray-600 hover:text-peach'
+							}
+						>
+							Shop
 						</NavLink>
 					</li>
 				</ul>
-			</header>
-		);
-} 
+			</nav>
+			<ul>
+				<li>
+					<NavLink
+						to='/cart'
+						className={({ isActive }) =>
+							isActive
+								? 'text-peach font-semibold border-b-2 border-peach'
+								: 'text-gray-600 hover:text-peach'
+						}
+					>
+						<div className='flex'>
+							{' '}
+						<img
+							src='shopping_cart.png'
+							alt='Cart'
+						/>
+						<p className='mb-2 text-[0.8em] bg-coral-red rounded-[100%] px-1.5 text-amber-50'>
+							{cartList.reduce((acc, product) => {
+								const qty = Number(product.quantity);
+								return acc + qty;
+							}, 0)}
+						</p>
+						</div>
+						
+					</NavLink>
+				</li>
+			</ul>
+		</header>
+	);
+};
 
 export default Navbar;
