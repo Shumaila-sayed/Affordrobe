@@ -49,18 +49,21 @@ const Navbar = ({ cartList }) => {
 					>
 						<div className='flex'>
 							{' '}
-						<img
-							src='shopping_cart.png'
-							alt='Cart'
-						/>
-						<p className='mb-2 text-[0.8em] bg-coral-red rounded-[100%] px-1.5 text-amber-50'>
-							{cartList.reduce((acc, product) => {
-								const qty = Number(product.quantity);
-								return acc + qty;
-							}, 0)}
-						</p>
+							<img
+								src='shopping_cart.png'
+								alt='Cart'
+							/>
+							<p
+								className={`mb-2 text-[0.8em] bg-coral-red rounded-[100%] px-2 text-amber-50 ${
+									cartList.length > 0 ? 'animate-bounce' : ''
+								}`}
+							>
+								{cartList.reduce((acc, product) => {
+									const qty = Number(product.quantity);
+									return acc + qty;
+								}, 0)}
+							</p>
 						</div>
-						
 					</NavLink>
 				</li>
 			</ul>
