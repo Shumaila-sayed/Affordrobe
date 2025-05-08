@@ -55,7 +55,7 @@ const Products = ({ cartList, setCartList }) => {
 				</p>
 			) : (
 				<div
-					className=' grid grid-cols-[repeat(auto-fit,minmax(12em,0.6fr))] gap-y-8 gap-x-8 py-8 place-items-center 
+					className=' grid grid-cols-[repeat(auto-fit,minmax(12em,0.6fr))] gap-y-8 gap-x-8 py-8 place-items-center mx-25
                  lg:grid-cols-[repeat(auto-fit,minmax(22em,1fr))] lg:mx-16'
 				>
 					{productList.map((product) => (

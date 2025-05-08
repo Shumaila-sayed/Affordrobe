@@ -5,7 +5,7 @@ const Navbar = ({ cartList }) => {
 		<header className='flex justify-between mt-3 px-3 pb-1.5 border-b-peach/60 border-b-3 shadow bg-amber-50/50 lg:px-6 font-cal'>
 			<NavLink
 				to='/'
-				className='font-cal text-peach text-2xl'
+				className='font-cal text-peach  text-2xl'
 			>
 				AFFORDROBE
 			</NavLink>
@@ -16,8 +16,8 @@ const Navbar = ({ cartList }) => {
 							to='/'
 							className={({ isActive }) =>
 								isActive
-									? 'text-peach font-semibold border-b-2 border-peach'
-									: 'text-gray-600 hover:text-peach'
+									? 'text-peach font-semibold border-b-2 border-peach hidden lg:block'
+									: 'text-gray-600 hover:text-peach hidden lg:block'
 							}
 						>
 							Home
@@ -28,8 +28,8 @@ const Navbar = ({ cartList }) => {
 							to='/products'
 							className={({ isActive }) =>
 								isActive
-									? 'text-peach font-semibold border-b-2 border-peach'
-									: 'text-gray-600 hover:text-peach'
+									? 'text-peach font-semibold border-b-2 border-peach hidden lg:block'
+									: 'text-gray-600 hover:text-peach hidden lg:block'
 							}
 						>
 							Shop

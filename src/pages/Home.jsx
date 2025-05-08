@@ -7,7 +7,7 @@ const Home = () => {
 				<h1 className='text-5xl font-bold lg:px-8 tracking-wide'>
 					FIND PRODUCTS THAT MATCHES YOUR STYLE
 				</h1>
-				<p className='pt-4 lg:px-8 lg:mt-4 opacity-80'>
+				<p className='pt-4 px-2 lg:px-8 lg:mt-4 opacity-80'>
 					Browse through our diverse range of meticulously crafted garments,
 					designed to bring out your individuality and cater to your sense of
 					style.
@@ -19,18 +19,24 @@ const Home = () => {
 					</button>
 				</NavLink>
 
-				<div className='flex gap-4 justify-center mt-12 lg:mt-18'>
+				<div className='flex gap-4 justify-center mx-4 mt-12 lg:mt-18'>
 					<div className='border-r-black/50 border-r-2 pr-2'>
 						<p className='text-left text-3xl'>200+</p>
-						<p className='opacity-80'>International Brands</p>
+						<p className='text-left lg:text-center opacity-80'>
+							International Brands
+						</p>
 					</div>
 					<div className='border-r-black/50 border-r-2 pr-2'>
 						<p className='text-left text-3xl'>2,000+</p>
-						<p className='opacity-80'>High-Quality Products</p>
+						<p className=' text-left lg:text-center opacity-80'>
+							High-Quality Products
+						</p>
 					</div>
 					<div>
 						<p className='text-left text-3xl'>35,000+</p>
-						<p className='opacity-80'>Happy Customers</p>
+						<p className='text-left lg:text-center opacity-80'>
+							Happy Customers
+						</p>
 					</div>
 				</div>
 			</div>

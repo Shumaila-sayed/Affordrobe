@@ -33,7 +33,7 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 	};
 
 	return (
-		<div className='bg-white inset-0 flex flex-col items-center justify-center rounded-xl shadow-md cursor-pointer  h-[400px] w-[250px] overflow-hidden hover:shadow-[0_0_20px_rgba(241,218,82,0.7)]'>
+		<div className='bg-white inset-0 flex flex-col items-center justify-center rounded-xl shadow-md cursor-pointer h-[400px] w-[250px]  overflow-hidden hover:shadow-[0_0_20px_rgba(241,218,82,0.7)]'>
 			<img
 				className='h-48 w-full object-contain rounded-t-xl p-1'
 				src={product.image}

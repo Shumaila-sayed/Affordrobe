@@ -27,7 +27,7 @@ const CartItem = ({ product, cartList, setCartList }) => {
 				</div>
 
 				<div className='text-left pt-3 pl-3'>
-					<h2 className='text-[1.2em]'>{product.title}</h2>
+					<h2 className='lg:text-[1.2em] text-[17px]'>{product.title}</h2>
 
 					<div>
 						<button
@@ -62,7 +62,7 @@ const CartItem = ({ product, cartList, setCartList }) => {
 					</div>
 				</div>
 			</div>
-			<p className='pr-6 pt-8 lg:pt-12 text-coral-red'>{`$ ${product.price}`}</p>
+			<p className='pr-6 pt-8 lg:pt-12 text-coral-red'>{`${product.price}`}</p>
 		</div>
 	);
 };
