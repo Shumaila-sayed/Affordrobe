@@ -82,8 +82,12 @@ const ProductCard = ({ product, cartList, setCartList }) => {
 				</button>
 			)}
 			{isVisible && (
-				<p className='fixed font-cal rounded-2xl text-[1em] w-55 px-4 py-3 text-center bg-amber-100 text-coral-red border-b-4 border-coral-red right-4 bottom-4 z-50 shadow-md'>
+				<p className='fixed bottom-8 right-4 z-50 w-60 pt-3 text-center bg-amber-100 text-coral-red font-cal shadow-md overflow-hidden'>
 					Added to the Cart!!
+					<span
+						className='block h-1 bg-amber-100 mt-2 transition-all duration-3000 ease-in-out'
+						style={{ animation: 'progress 3s forwards' }}
+					></span>
 				</p>
 			)}
 		</div>
