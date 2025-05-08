@@ -10,7 +10,7 @@ An e-commerce site frontend built with React that allows users to browse product
 - ✅ Cart icon with live item count on all pages
 - ✅ Basic checkout flow simulation
 - ✅ Fully responsive layout with styled components or Tailwind CSS
-- ✅ Tested with React Testing Library
+- ✅ Tested with React Testing Library & Vitest
 - ✅ Deployed as an SPA with correct routing configuration for Vercel
 
 ## Tech Stack 📦
