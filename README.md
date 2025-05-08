@@ -11,7 +11,7 @@ An e-commerce site frontend built with React that allows users to browse product
 - ✅ Basic checkout flow simulation
 - ✅ Fully responsive layout with styled components or Tailwind CSS
 - ✅ Tested with React Testing Library
-- ✅ Deployed as an SPA with correct routing configuration for Netlify/Vercel
+- ✅ Deployed as an SPA with correct routing configuration for Vercel
 
 ## Tech Stack 📦
 
@@ -25,7 +25,7 @@ An e-commerce site frontend built with React that allows users to browse product
 
 ## Screenshots 📸
 
-![](/public/screenshot1.png) ![](/public/screenshot2.png) ![](/public/screenshot3.png) ![](/public/screenshot4.png)
+![](/public/screenshot1.png) ![](/public/screenshot2.png) ![](/public/screenshot3.png)
 
 ## Demo 🥁
 
